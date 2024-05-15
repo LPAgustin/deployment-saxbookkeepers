@@ -2,13 +2,11 @@ import Button from "./Button";
 import Section from "./Section";
 import { curve } from "../assets";
 import { heroBackground } from "../assets";
-import comp2 from '../assets/hero/comp2.mp4';
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
 import Notification from "./Notification";
-import CompanyLogos from "./CompanyLogos";
 import abstract from '../assets/hero/abstract.jpg'
 
 const Hero = () => {
