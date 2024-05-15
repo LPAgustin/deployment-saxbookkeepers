@@ -1,0 +1,8 @@
+<video src={comp2} controls className="w-full"
+                        width={1024}
+                        height={490}
+                        alt="video"
+                    ></video>
+
+        <CompanyLogos className="hidden relative z-10
+       mt-20 lg:block"/>
