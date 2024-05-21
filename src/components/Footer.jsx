@@ -21,7 +21,7 @@ const Footer = () => {
                     justify-center w-10 h-10 bg-n-7
                     rounded-full transition-colors hover:bg-n-6">
                         <img src={item.iconUrl}
-                        width={16}
+                        width={46}
                         height={16}
                         alt={item.title} />
                     </a>

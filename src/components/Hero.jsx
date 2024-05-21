@@ -5,12 +5,18 @@ import { heroBackground } from "../assets";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import Notification from "./Notification";
 import abstract from '../assets/hero/abstract.jpg'
+import InscriptionFormModal from './InscriptionFormModal'; 
 
 const Hero = () => {
     const parallaxRef = useRef(null);
+    const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
+
   return (
     <Section
     className="pt-[12rem] -mt-[5.25rem]"
@@ -19,10 +25,9 @@ const Hero = () => {
     id="hero"
     >
       <div className="container relative" ref={parallaxRef}>
-        
         <div className="relative z-1 max-w-[62rem] mx-auto text-center
         mb-[4rem] md:mb-20 lg:mb:[6rem]">
-                    <ScrollParallax isAbsolutelyPositioned>
+                                <ScrollParallax isAbsolutelyPositioned>
                         <ScrollParallax isAbsolutelyPositioned>
                             <Notification 
                             className="hidden
@@ -66,10 +71,11 @@ const Hero = () => {
             lg:mb-8">
             Simplifying bookkeeping for your peace of mind.
             </p>
-            <Button href="/pricing">
+            <Button onClick={openModal}>
                 Get started
             </Button>
         </div>
+        
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl
         xl:mb-24">
             <div className="relative z-1 p-0.5 rounded-2xl
@@ -78,13 +84,15 @@ const Hero = () => {
                 rounded-[1rem]">
                     <div className="h-[1.4rem] bg-n-10
                     rounded-t-[0.9rem]"/>
-<               div className="aspect-[65/80] 
+<               div className="aspect-[145/80] 
                 rounded-b-[0.9rem] overflow-hidden 
                 md:aspect-[1024/560] lg:aspect-[1024/560]">
                     <img src={abstract} />
                 </div>
+                
                 </div>
                 <Gradient />
+                
             </div>
             <div className="absolute -top-[54%] left-1/2
             w-[234%] -translate-x-1/2 md:-top-[46%]
@@ -108,6 +116,7 @@ const Hero = () => {
 
        </div>
        <BottomLine />
+       <InscriptionFormModal isOpen={isModalOpen} onRequestClose={closeModal} />
     </Section>
   );
 };

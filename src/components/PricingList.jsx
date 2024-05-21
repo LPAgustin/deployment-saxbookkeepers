@@ -1,8 +1,17 @@
 import { check } from "../assets"
 import { pricing } from "../constants"
 import Button from "./Button"
+import { useState } from "react";
+import InscriptionFormModal from './InscriptionFormModal';
+
 
 const PricingList = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
   return (
       <div className="flex gap-[1rem] max-lg:flex-wrap">
         {pricing.map((item) => (
@@ -25,11 +34,12 @@ const PricingList = () => {
                         </>
                     )}
                 </div>
-                <Button className="text-n-8 w-full mb-6"
-                href={item.price ? '/pricing' : 'mailto:info@jsm.pro'}
-                >
-                    {item.price ? 'Get Started' : 'Contact Us'}
-                </Button>
+                <Button 
+            className="text-n-8 w-full mb-6" 
+            onClick={openModal} // Open modal on button click
+          >
+            {item.price ? 'Get Started' : 'Contact Us'}
+          </Button>
                 <ul>
                     {item.features.map((feature, index) => (
                         <li
@@ -47,6 +57,7 @@ const PricingList = () => {
                 </ul>
             </div>
         ))}
+         <InscriptionFormModal isOpen={isModalOpen} onRequestClose={closeModal} />
     </div>
   )
 }

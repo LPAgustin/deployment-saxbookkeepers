@@ -3,8 +3,16 @@ import Section from './Section'
 import { check, urbanstrings, brainwaveWhiteSymbol } from '../assets'
 import Button from './Button'
 import { LeftCurve, RightCurve } from './design/Collaboration'
+import InscriptionFormModal from './InscriptionFormModal';
+import { useState } from "react";
 
 const Collaboration = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <Section crosses>
       <div className='container lg:flex'>
@@ -31,7 +39,7 @@ const Collaboration = () => {
                 </li>
               ))}
             </ul>
-            <Button>Try it now</Button>
+            <Button onClick={openModal}>Try it now</Button>
         </div>
         <div className='lg:ml-auto xl:w-[38rem] mt-4'>
           <p className='body-2 mb-8 text-n-4 md:mb-16 lg:mb-32 lg:w-[22rem]
@@ -74,6 +82,7 @@ const Collaboration = () => {
           </div>
         </div>
       </div>
+      <InscriptionFormModal isOpen={isModalOpen} onRequestClose={closeModal} />
     </Section>
   )
 }

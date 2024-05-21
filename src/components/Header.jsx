@@ -6,11 +6,13 @@ import Button from './Button';
 import MenuSvg from '../assets/svg/MenuSvg';
 import { HamburgerMenu } from './design/Header';
 import { useState } from 'react';
+import InscriptionFormModal from './InscriptionFormModal'; 
 
 
 const Header = () => {
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleNavigation = () => {
     if(openNavigation) {
       setOpenNavigation(false);
@@ -25,6 +27,12 @@ const Header = () => {
     enablePageScroll();
     setOpenNavigation(false);
   };
+
+
+  const openModal = () => setIsModalOpen(true); // Function to open the modal
+  const closeModal = () => setIsModalOpen(false); // Function to close the modal
+
+
   return (
     <div 
     className={`fixed top-0 left-0 w-full z-50
@@ -62,7 +70,7 @@ const Header = () => {
               </div>
               <HamburgerMenu />
              </nav>
-             <Button className="hidden lg:flex text-n-8" href="#">
+             <Button className="hidden lg:flex text-n-8" onClick={openModal}>
               GET STARTED
 
              </Button>
@@ -71,6 +79,7 @@ const Header = () => {
               <MenuSvg openNavigation={openNavigation} />
              </Button>
         </div>
+        <InscriptionFormModal isOpen={isModalOpen} onRequestClose={closeModal} /> {/* Modal component */}
     </div>
   );
 }

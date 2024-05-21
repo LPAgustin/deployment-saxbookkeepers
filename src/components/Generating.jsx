@@ -1,7 +1,7 @@
 const Generating = ({ className }) => {
   return (
     <div className={`flex items-center h-[2rem]
-    px-6 bg-n-6/80 rounded-[1.7rem] 
+     bg-n-7/80 rounded-[1.7rem] 
     ${className || ''}
     text-base justify-center`}>
         <p 
