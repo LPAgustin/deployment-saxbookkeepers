@@ -9,12 +9,10 @@ import {
     disc02,
     discord,
     discordBlack,
-    facebook,
     figma,
     file02,
     framer,
     homeSmile,
-    instagram,
     notification2,
     notification3,
     notification4,
@@ -32,8 +30,6 @@ import {
     searchMd,
     slack,
     sliders04,
-    telegram,
-    twitter,
     yourlogo,
   } from "../assets";
   
