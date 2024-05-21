@@ -138,8 +138,4 @@ export {
   benefitIcon5,
   benefitImage2,
   discordBlack,
-  facebook,
-  instagram,
-  telegram,
-  twitter,
 };
