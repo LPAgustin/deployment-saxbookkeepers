@@ -24,7 +24,7 @@ const Roadmap = () => {
         md:pb-[7rem]'>
           {roadmap.map((item) => {
             const status = item.status === 'done' ?
-            "Done" : "In progress";
+            "Solutions" : "Professionalism";
             return (
               <div key={item.id} className={`md:flex even:md:translate-y-[7em]
               p-0.25 rounded-[2.5rem]

@@ -81,10 +81,10 @@ const InscriptionFormModal = ({ isOpen, onRequestClose }) => {
 
             <label htmlFor="options" className="label">Select an Option:</label>
             <select id="options" className="selectOption" name="option" value={formData.option} onChange={handleChange}>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
-              <option value="option4">Option 4</option>
+              <option value="option1">StartUp</option>
+              <option value="option2">Premium</option>
+              <option value="option3">Enterprise</option>
+              <option value="option4">Any specifications?</option>
             </select>
 
             {showTextBox && (
@@ -95,7 +95,7 @@ const InscriptionFormModal = ({ isOpen, onRequestClose }) => {
                   name="specificMessage"
                   value={formData.specificMessage}
                   onChange={handleChange}
-                  placeholder="Enter your specific message here"
+                  placeholder="Specify your needs and we'll asist you"
                   rows="4"
                 ></textarea>
               </label>

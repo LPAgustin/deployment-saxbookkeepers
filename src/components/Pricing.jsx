@@ -29,7 +29,7 @@ const Pricing = () => {
         </div>
         <Heading 
         tag="Get started today"
-        title="SAX Bookkeepers"
+        title="All prices starting from"
         />
         <div className="relative">
             <PricingList />
